@@ -1,6 +1,6 @@
-# Damascus Rainfall Prediction 🌧️
+#  Rainfall Prediction 🌧️
 
-A professional machine learning project that predicts whether it will rain tomorrow in Damascus using historical weather metrics. Built with Python, Pandas, and Scikit-Learn using a **Random Forest Classifier**.
+A professional machine learning project that predicts whether it will rain tomorrow using historical weather metrics. Built with Python, Pandas, and Scikit-Learn using a **Random Forest Classifier**.
 
 ---
 
