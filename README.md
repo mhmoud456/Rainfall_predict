@@ -1,43 +1,55 @@
-#  Rainfall Prediction 🌧️
-
-A professional machine learning project that predicts whether it will rain tomorrow using historical weather metrics. Built with Python, Pandas, and Scikit-Learn using a **Random Forest Classifier**.
+A professional end-to-end Machine Learning web application built to predict whether it will rain tomorrow in Damascus based on daily meteorological indicators. The project follows industry best practices by decoupling model training from real-time inference and providing an interactive modern web interface.
 
 ---
 
-## 📌 Project Overview
+## 📌 Project Architecture & Workflow
 
-This project implements an end-to-end Binary Classification pipeline. Rather than guessing today's weather, the model analyzes daily meteorological indicators (cloud cover, humidity, pressure, wind speed, etc.) to accurately forecast **`RainTomorrow`**.
+1. **Model Training (`train.py`):** 
+   * Processes the historical weather dataset.
+   * Trains a robust **Random Forest Classifier** and evaluates its performance.
+   * Serializes and saves the trained model into a production-ready file (`rain_model.pkl`).
+2. **Web Application (`app.py`):** 
+   * An interactive, modern UI built using **Streamlit**.
+   * Loads the pre-trained model instantly, accepts live meteorological inputs via sliders and number inputs, and forecasts tomorrow's precipitation with confidence probabilities.
 
-## 📊 Key Results & Insights
+---
 
-* **Accuracy:** **100.00%** on test data.
-* **Feature Importance:**
+## 📊 Key Insights & Performance
+
+* **Accuracy:** **100.00%** on the test dataset.
+* **Feature Importance Analysis:** 
   * **Cloud Cover (`Cloud`):** ~49.7% impact
   * **Humidity (`Humidity`):** ~46.4% impact
-  * Combined, **Cloud & Humidity** dictate over **96%** of the physical precipitation logic.
+  * Together, Cloud Cover and Humidity govern over **96%** of the prediction logic.
 
 ---
 
-## 📁 Repository Structure
+## 📁 Repository File Structure
 
 ```text
-damas-rainfall-prediction/
+Rainfall_predict/
 │
-├── main.py                 # Core Machine Learning Pipeline
-├── requirements.txt        # Project Dependencies
-├── .gitignore              # Files ignored by Git
-└── README.md               # Project Documentation
-🛠️ How to Run Locally
+├── weather_based_rain_prediction_dataset.csv # Historical weather dataset
+├── train.py                # Training pipeline & model serialization
+├── app.py                  # Interactive Streamlit Web UI
+├── rain_model.pkl          # Serialized trained Random Forest model
+├── requirements.txt        # Project dependencies
+├── .gitignore              # Ignored temporary files
+└── README.md               # Project documentation
+🚀 How to Run Locally
 1. Clone the repository
 Bash
-git clone [https://github.com/mhmoud456/damas-rainfall-prediction.git](https://github.com/mhmoud456/damas-rainfall-prediction.git)
-cd damas-rainfall-prediction
+git clone [https://github.com/mhmoud456/Rainfall_predict.git](https://github.com/mhmoud456/Rainfall_predict.git)
+cd Rainfall_predict
 2. Install dependencies
 Bash
 pip install -r requirements.txt
-3. Run the ML pipeline
+3. Train the model (Optional / Generates rain_model.pkl)
 Bash
-python main.py
+python train.py
+4. Run the Streamlit Web Application
+Bash
+python -m streamlit run app.py
 👤 Author
 Mahmoud Mamo
 
